@@ -25,7 +25,10 @@ public class RestTester {
 	 */
 	public static void main(String[] args) {		
 		HttpClient httpClient = new DefaultHttpClient();
-		HttpGet httpGet = new HttpGet("http://localhost:8080/RestJerseyHelloWorld/rest/hellos/Dush");
+		//url to fetch data from db
+		HttpGet httpGet = new HttpGet("http://localhost:8080/RestJerseyHelloWorld/rest/getUsers");
+		//url to test rest
+//		HttpGet httpGet = new HttpGet("http://localhost:8080/RestJerseyHelloWorld/rest/hellos/Dush");
 		httpGet.addHeader(BasicScheme.authenticate(
 				new UsernamePasswordCredentials("admin", "admin"),
 				"UTF-8", false));
@@ -49,7 +52,7 @@ public class RestTester {
 			e.printStackTrace();
 		}
 
-		System.out.println(responseEntity.toString());
+		
 
 		Authenticator.setDefault (new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
