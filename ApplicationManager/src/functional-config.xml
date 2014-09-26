@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+ "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="functionality" extends="struts-default">
+		<action name="Home" class="com.apk.manager.action.functionality.Home">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/home.jsp</result>
+		</action>
+
+		<action name="PostApp"
+			class="com.apk.manager.action.functionality.DeployAction">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/postApp.jsp</result>
+		</action>
+
+		<action name="DelApp"
+			class="com.apk.manager.action.functionality.DeleteAction">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/delApp.jsp</result>
+		</action>
+
+		<action name="AppDetails"
+			class="com.apk.manager.action.functionality.AppDetailsAction">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/appDetails.jsp</result>
+		</action>
+
+		<action name="HelpApp" class="com.apk.manager.action.functionality.HelpAction">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/help.jsp</result>
+		</action>
+
+		<action name="Logout" class="com.apk.manager.action.functionality.Home"
+			method="logout">
+			<result name="input">/jsps/login.jsp</result>
+			<result name="success">/jsps/login.jsp</result>
+		</action>
+
+		<action name="upload" class="com.apk.manager.action.functionality.DeployAction"
+			method="deployApp">
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+				<!-- <param name="allowedTypes"> image/png,image/gif,image/jpeg,image/apk 
+					</param> -->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			<result name="input">/jsps/postApp.jsp</result>
+			<result name="success">/jsps/home.jsp</result>
+		</action>
+	</package>
+</struts>

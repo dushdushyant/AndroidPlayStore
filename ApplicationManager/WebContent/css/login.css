@@ -1,0 +1,32 @@
+#Login {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: italic;
+	color: #000000;
+	height: 300px;
+	width: 700px;
+	position: relative;
+	top: 150px;
+	background: url(../images/LoginBackground.jpg) no-repeat;
+	margin: 2px 2px 2px 2px;
+	background-color: #FFFFFF;
+	text-align: center;
+	background-position: center;
+	vertical-align: middle;
+	padding: 10px;
+	/*filter:alpha(Opacity=50);
+	filter:-moz-opacity =.15; /* mozilla 
+	background: url(../images/LoginBackground.jpg) no-repeat;
+	background-color: #000000;*/
+}
+
+#body {
+	background-color: #FFFFFF;
+}
+
+.errorMessage {
+  font-weight: bold;
+  color: red;
+}
